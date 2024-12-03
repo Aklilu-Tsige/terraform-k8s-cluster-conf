@@ -11,10 +11,11 @@ variable "instance_type_master" {}
 variable "instance_type_worker" {}
 variable "worker_count" {}
 variable "environment" {}
-# variable "key_name" {
-#   description = "Name of the SSH key pair"
-#   default     = "k8-test-key"#
-# }
 variable "volume_size" {
   default = 20
+}
+
+variable "key_name" {
+  description = "Name of the SSH key pair"
+  type        = string
 }
