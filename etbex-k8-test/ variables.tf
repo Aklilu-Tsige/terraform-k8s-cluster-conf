@@ -1,4 +1,3 @@
-# variables.tf (root)
 variable "region" {
   description = "AWS region"
   default     = "eu-central-2"
@@ -51,10 +50,4 @@ variable "instance_type_worker" {
 variable "worker_count" {
   description = "Number of worker nodes"
   default     = 2
-}
-
-variable "key_name" {
-  description = "SSH key pair name"
-  type        = string
-  default     = "kubernetes-key"
 }

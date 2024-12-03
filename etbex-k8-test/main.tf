@@ -41,5 +41,5 @@ module "compute" {
   instance_type_worker = var.instance_type_worker
   worker_count         = var.worker_count
   environment          = var.environment
-  key_name            = module.keypair.key_name  # Using the generated key
+  key_name            = module.keypair.key_name
 }
