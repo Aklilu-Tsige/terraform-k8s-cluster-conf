@@ -1,4 +1,3 @@
-# modules/security/main.tf
 resource "aws_security_group" "k8s_master" {
   name        = "${var.environment}-k8s-master"
   description = "Security group for Kubernetes master node"
