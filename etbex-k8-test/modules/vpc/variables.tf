@@ -1,4 +1,3 @@
-# modules/vpc/variables.tf
 variable "vpc_cidr" {}
 variable "region" {}
 variable "environment" {}
