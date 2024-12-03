@@ -1,4 +1,3 @@
-# First, create modules/keypair/main.tf
 resource "tls_private_key" "k8s_key" {
   algorithm = "RSA"
   rsa_bits  = 4096
