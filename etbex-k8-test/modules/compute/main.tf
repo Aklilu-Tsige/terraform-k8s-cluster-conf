@@ -1,5 +1,3 @@
-# Update modules/compute/main.tf
-# Remove the key pair creation if it exists and just use the provided key_name
 data "aws_ami" "ubuntu" {
   most_recent = true
 
@@ -20,7 +18,7 @@ resource "aws_instance" "k8s_master" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance_type_master
   subnet_id     = var.public_subnet_ids[0]
-  key_name      = var.key_name  # Using the key from keypair module
+  key_name      = var.key_name
 
   vpc_security_group_ids = [var.master_sg_id]
 
@@ -39,7 +37,7 @@ resource "aws_instance" "k8s_worker" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance_type_worker
   subnet_id     = var.public_subnet_ids[count.index % length(var.public_subnet_ids)]
-  key_name      = var.key_name  # Using the key from keypair module
+  key_name      = var.key_name
 
   vpc_security_group_ids = [var.worker_sg_id]
 
